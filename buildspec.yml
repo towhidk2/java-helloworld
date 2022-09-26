@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+    commands:
+    - echo Nothing to do with the install phase...
+  pre_build:
+    commands:
+    - echo Nothing to do with the pre_build phase...
+  build:
+    commands:
+    - echo Build started on `date`
+    - mvn clean install
+  post_build:
+    commands:
+    - echo Build completed on `date`
+artifacts:
+  files:
+  - target/*.jar
+  - scripts/*.sh
+  - appspec.yml
+  discard-paths: yes
