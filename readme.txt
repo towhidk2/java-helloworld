@@ -1,10 +1,4 @@
-Java JDK 1.8.0_333
-Maven 3.5.0
-
-
 # install codedeploy agent
-//run below commands to setup java 11 and code-deploy agent
-
 sudo yum update
 sudo yum install ruby
 sudo yum install wget
