@@ -2,23 +2,18 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
-    destination: /root
+  - source: /java-maven-app-2.2.19.jar
+    destination: /opt/
 
 hooks:
   BeforeInstall:
-    - location: server_clear.sh
+    - location: install_dependencies.sh
       timeout: 300
       runas: root
-  AfterInstall:
-    - location: fix_privileges.sh
-      timeout: 300
-      runas: root
-  ApplicationStart:
     - location: server_start.sh
-      timeout: 30
+      timeout: 300
       runas: root
   ApplicationStop:
     - location: server_stop.sh
-      timeout: 30
+      timeout: 300
       runas: root

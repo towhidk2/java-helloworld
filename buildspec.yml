@@ -18,7 +18,7 @@ phases:
     - echo Build completed on `date`
     - cp scripts/*.sh .
     - cp target/*.jar .
-    - zip myapp.zip fix_privileges.sh server_clear.sh server_start.sh server_stop.sh java-maven-app-2.2.19.jar
+    - zip myapp.zip install_dependencies.sh server_start.sh server_stop.sh java-maven-app-2.2.19.jar
 artifacts:
   files:
   - myapp.zip
