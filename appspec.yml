@@ -1,10 +1,8 @@
 version: 0.0
 os: linux
-
 files:
   - source: /java-maven-app-2.2.19.jar
     destination: /opt/
-
 hooks:
   BeforeInstall:
     - location: server_start.sh
