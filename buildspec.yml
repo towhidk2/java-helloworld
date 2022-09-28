@@ -16,6 +16,9 @@ phases:
   post_build:
     commands:
     - echo Build completed on `date`
-    - aws deploy push --application-name myapp-1 --s3-location s3://myapp-3889/helloworld.zip --ignore-hidden-files --region us-east-1
-    
+    # - aws deploy push --application-name myapp-1 --s3-location s3://myapp-3889/helloworld.zip --ignore-hidden-files --region us-east-1
+artifacts:
+  files:
+    - '**/*'
+
 
