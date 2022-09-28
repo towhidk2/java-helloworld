@@ -1,14 +1,24 @@
 version: 0.0
 os: linux
+
 files:
-  - source: /java-maven-app-2.2.19.jar
-    destination: /opt/
+  - source: /
+    destination: /home/ec2-user/app
+
 hooks:
   BeforeInstall:
-    - location: server_start.sh
+    - location: scripts/before_install.sh
       timeout: 300
       runas: root
-  ApplicationStop:
-    - location: server_stop.sh
+  AfterInstall:
+    - location: scripts/after_install.sh
       timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/server_start.sh
+      timeout: 20
+      runas: root
+  ApplicationStop:
+    - location: scripts/server_stop.sh
+      timeout: 20
       runas: root
